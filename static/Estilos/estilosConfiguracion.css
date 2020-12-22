@@ -1,0 +1,63 @@
+input{
+    height: 25px;
+
+}
+
+/*div{
+    
+    text-align: center;
+    margin: auto;
+    display: block;
+    
+}*/
+
+.cuerpo{
+    width: 1000px;
+    margin-left: 400px;
+}
+
+h1{
+    text-align: center;
+    ;
+}
+
+.mitad{
+    background-color: skyblue;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    padding: 20px 46px 20px 46px;
+    width:400px;
+    display: inline;
+    border-radius: 30px;
+    color: white;
+    font-weight: bolder;
+}
+
+.formato{
+    background-color: skyblue;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    padding: 20px;
+    width:400px;
+    display: inline;
+    border-radius: 30px;
+    color: white;
+    font-weight: bolder;
+}
+
+.button{
+    background-color: #00CED1;
+    height: 30px;
+    border: none;
+    border-radius: 2px;   
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+body{
+    background-color: white;
+}
+
+.boton1{
+    margin-left: 550px;
+}
+.boton{
+    margin-left: 712px;
+}

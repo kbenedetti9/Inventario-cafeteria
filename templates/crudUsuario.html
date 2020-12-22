@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% block title %} Usuarios {% endblock %}
+
+{% block ref %}
+<link rel="stylesheet" href="../static/Estilos/estilosCrudUsuario.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+<script src="../static/validaciones.js"></script>
+<script src="../static/crudUsuario.js"></script>
+{% endblock %}
+{% block content %}
+<div class="Barra_principal">
+    <i class="fas fa-home" style="color: white; margin-left: 1%;size: 110%;"></i>
+    <a Class="link_usuario" href=#>Usuarios</a>
+    <a Class="link_producto" href=#>Productos</a>
+</div>
+<div>
+    <h2><i class="fas fa-users" style="color: #00CED1;"></i>Usuarios</h2>
+    <form class="ingreso_usuario" name="ingreso_usuario" id="ingreso_usuario" action="/usuario/crear" method="POST">
+        <div class="Izquierda">
+            <h3 class="usuario_letrero">Usuario</h3>
+            <h4 class="usuario_imagen"><i class="fas fa-user"></i></h4>
+        </div>
+        <div class="Derecha">
+            <div class="contenido">
+                <label for="ID_usuario">ID: </label>
+                <input class="ingreso_ID" style="width: 100px; margin-left: 50px;" type="number" name="ID_usuario" id="ID_usuario" required>
+                <br>
+                <br>
+                <label for="nombre_usuario">Nombre: </label>
+                <input class="ingreso_usuario_texto1" type="text" name="nombre_usuario" id="nombre_usuario" required
+                    onkeypress="return soloLetras(event)">
+                <br>
+                <br>
+                <label for="correo_electronico">Correo electrónico: </Label>
+                <input style="width: 70%; margin-left: 20px;" class="ingreso_usuario_texto2" type="email" name="correo_electronico" id="correo_electronico"
+                    required>
+                <br>
+                <br>
+                <label for="Usuario">Usuario: </label>
+                <input class="ingreso_usuario_texto3" style="width: 400px; margin-left: 20px;" type="text" name="Usuario" id="Usuario" required>
+                <button class="guardar_usuario_ingresado1" type="submit" formaction="/usuario/crear" value="Crear" Name="crear"><i class="fas fa-user-plus"></i>Crear</button>
+                <button class="guardar_usuario_ingresado1" type="submit" formaction="/usuario/actualizar" value="Editar" Name="editar"><i class="fas fa-user-edit"></i>Editar</button>
+                <button class="guardar_usuario_ingresado1" id="btnEliminar" type="submit" formaction="/usuario/eliminar"><i class="fas fa-trash-alt"></i></button>
+            </div>
+        </div>
+    </form>
+    <br>
+    <form class="busqueda_usuario" name="busqueda_usuario" id="busqueda_usuario" action="/usuario/consultar" method="POST">
+        <div class="zona_busqueda">
+            <label class="ID_busqueda" for="ID_busqueda">Buscar: </label>
+            <input class="id_texto_busqueda" type="search" name="ID_busqueda" id="ID_busqueda">
+            <button class="Buscar" type="submit"><i class="fas fa-search"></i></button>
+        </div>
+        <br>
+        <table class="tabla_busqueda" onclick="obtenerValoresusuario(event)">
+            <tr>
+                <th> ID </th>
+                <th>Nombre</th>
+                <th>Correo electrónico</th>
+                <th>Usuario</th>
+            </tr>
+            {% if row %}
+            <tr>
+                <td>{{row["id"]}}</td>
+                <td>{{row["nombre"]}}</td>
+                <td>{{row["correo"]}}</td>
+                <td>{{row["usuario"]}}</td>
+            </tr>
+            {% else %}
+            {% for row in rows %}
+            <tr>
+                <td>{{row["id"]}}</td>
+                <td>{{row["nombre"]}}</td>
+                <td>{{row["correo"]}}</td>
+                <td>{{row["usuario"]}}</td>
+            </tr>
+            {% endfor %}
+            {% endif %}
+        </table>
+    </form>
+</div>
+{% endblock %}

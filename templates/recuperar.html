@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/Estilos/estilosNav.css">
+    <link rel="stylesheet" href="../static/Estilos/estiloRecuperar.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+    <title>Recuperar Contraseña</title>
+</head>
+
+<body class="barra">
+    <div class="barra contenedorBarra">
+        <header class="barra">
+            <nav class="barra">
+                <div class="barra">
+                    <div class="contenedorMenu barra">
+                        <ul class="barra">
+                            <li><a href="/"><i class="fas fa-door-open"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+    </div>
+    </nav>
+    </header>
+    </div>
+    <br>
+    <br>
+    <br>
+    <h1>Recuperar Contraseña</h1>
+    <br>
+    <br>
+    <br>
+
+    <form action="/enviar-correo" method="POST">
+        <div>
+            <label class="id" for="IdUsuario">Usuario</label>
+            <input type="text" name="IdUsuario" id="IdUsuario" required>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div>
+            <label class="email" for="correo">Correo</label>
+            <input type="email" name="correo" id="correo" required>
+        </div>
+        <br>
+        <br>
+        <div>
+            <input class="correo" type="submit" value="Enviar al correo">
+        </div>
+    </form>
+</body>
+
+</html>

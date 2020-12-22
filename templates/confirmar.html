@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>confirmacion</title>
+    <link rel="stylesheet" href="../static/Estilos/estilosConfirmacion.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="card">
+        <i class="fas fa-exclamation-circle"></i>
+        <h2 class="texto">{{texto}}</h2>
+        <form action="{{referencia}}" >
+            <input type="submit" class="btnOk" value="OK!">
+        </form>
+        <!-- <button type="button" class="btnOk" onclick="location.href='{{referencia}}'" >OK!</button> -->
+    </div>
+</body>
+</html>

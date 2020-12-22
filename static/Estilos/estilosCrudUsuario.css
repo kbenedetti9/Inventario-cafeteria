@@ -1,0 +1,152 @@
+div{
+    font-family: 'Raleway', sans-serif;
+}
+h2{
+    font-size: 300%;
+    margin-top:4%;
+    margin-left: 5%;
+    margin-bottom: 2%;
+    color: #00CED1;
+}
+h3{
+    font-size: 150%; 
+    margin-top: 0%;
+    margin-bottom: 1%;
+    margin-left: 30%;
+}
+h4{
+    font-size: 400%; 
+    margin-top: 0%;
+    margin-bottom: 1%;
+    margin-left: 37%;
+}
+.ingreso_ID{
+    width: 50%;
+    font-size: 100%;
+    margin-left: 10%;
+    border-radius: 10px;
+}
+.ingreso_usuario{
+    margin-left:5%;
+    margin-right:5%;
+    margin-top:2%;
+    border-style: solid;
+    border-color: black;
+    border-radius: 10px;
+    padding-bottom: 10%;
+    padding-top: 2%;
+    font-size: 150%;
+    border-width: thin;
+    height: 130px;
+}
+.ingreso_usuario_texto1{
+    width: 80%;
+    font-size: 100%;
+    margin-left: 3%;
+    border-radius: 10px;
+}
+.ingreso_usuario_texto2{
+    width: 80%;
+    font-size: 100%;
+    margin-left: 1%;
+    border-radius: 10px;
+}
+.ingreso_usuario_texto3{
+    width: 50%;
+    font-size: 100%;
+    margin-left: 7%;
+    border-radius: 10px;
+}
+.guardar_usuario_ingresado1{
+    font-size: 100%;
+    text-align: right;
+    margin-left:3%;
+    background-color: #00CED1;
+    border-radius: 5px;
+}
+.guardar_usuario_ingresado2{
+    font-size: 100%;
+    text-align: right;
+    margin-left:5%;
+    border-radius: 5px
+}
+.busqueda_usuario{
+    margin-left: 5%;
+    margin-right:5%;
+    margin-top:1%;
+    padding-left: 2%;
+    border-width: thin;
+    border-style: solid;
+    border-color: black;
+    border-radius: 10px;
+    font-size: 150%;
+    background-color: #00CED1;
+}
+table{
+    text-align: center;
+}
+.zona_busqueda{
+    margin-top:2%;
+}
+.nombre_texto_busqueda{
+    font-size: 100%;
+    width: 50%;
+    border-radius: 10px;
+}
+.id_texto_busqueda{
+    font-size: 100%;
+    width: 20%;
+    border-radius: 10px;
+}
+.nombre_busqueda{
+    color:white;
+}
+.ID_busqueda{
+    color:white;
+}
+.Buscar{
+    font-size: 100%;
+    margin-left: 1%;
+    border-radius: 5px;
+}
+.tabla_busqueda{
+    background-color: white;
+    margin-bottom: 12%;
+    width:98%;
+    border-style: solid;
+    border-width: thin;
+    border-radius: 10px;
+}
+.botones_acciones1{
+    font-size: 80%;
+    text-align: right;
+    border-radius: 5px;
+    background-color: #00CED1;
+}
+.botones_acciones2{
+    font-size: 80%;
+    margin-left: 3%;
+    border-radius: 5px;
+    background-color: #00CED1;
+}
+.link_usuario{
+    margin-left: 3%;
+    color: white;
+    text-decoration-line: none;
+    font-size: 115%;
+}
+.link_producto{
+    margin-left: 3%;
+    color: white;
+    text-decoration-line: none;
+    font-size: 115%;
+}
+.Izquierda{
+    float: left;
+    width:22%;
+    border-right: dotted ;
+}
+.Derecha{
+    float: right;
+    width:75%;
+}

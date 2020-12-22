@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/Estilos/estilosNav.css">
+    <link rel="stylesheet" href="../static/Estilos/estilosConfiguracion.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+    <title>ReestablecerContraseñaUsuario</title>
+
+</head>
+
+<body class="barra">
+    <div class="barra contenedorBarra">
+        <header class="barra">
+            <nav class="barra">
+                <div class="barra">
+                    <div class="contenedorMenu barra">
+                        <ul class="barra">
+                            <li><a href="homeUsuario"><i class="fas fa-home"></i></a></li>
+                            <li><a href="buscar">Buscar Producto</a></li>
+                        </ul>
+                    </div>
+                    <div class="contenedorPerfil barra">
+                        <img class="imagen" class="rounded-circle img-fluid" src="../static/Imagenes/user.jpg"
+                            width="45em" alt="user picture">
+                        <div class="contenedorUsuario">
+                            <h5>{{persona["usuario"]}}</h5>
+                            <a href="configuracionUsuario"><i class="fas fa-cog"></i></a>
+                            <a href="/logout"><i class="fas fa-sign-out-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div>
+        <h1>Reestablecer Contraseña</h1>
+
+    </div>
+    <form action="/restablecerUsuario" method="POST">
+        <br>
+        <br>
+        <div>
+            <div class="cuerpo">
+                <label class="formato" for="contravieja"> Digite antigua contraseña</label>
+                <input type="password" name="contravieja" id="contravieja" required>
+            </div>
+
+            <br>
+            <br>
+            <br>
+
+
+            <div class="cuerpo">
+                <label class="mitad" for="contra"> Nueva Contraseña</label>
+                <input type="password" name="contra" id="passw" required>
+            </div>
+            <br>
+            <br>
+            <br>
+
+            <div class="cuerpo">
+                <label class="formato" for="contra2">Reconfirme la contraseña</label>
+                <input type="password" name="contra2" id="passw2" required>
+            </div>
+        </div>
+        <br>
+        <h2 class="boton1">{{validacion}}</h2>
+        <br>
+        <div class="boton">
+            <input type="submit" class="button" value="Reestablecer">
+        </div>
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+.contenedorBarra{
+    margin-top : 0;
+    display: block;
+    border: 1px solid #1dc4e9;
+}
+.barra{
+    padding: 0;
+    margin : 0;
+}
+
+body {/*Cuerpo*/
+    font-family: 'Raleway', sans-serif;
+    /* color: white;*/
+} 
+
+header {
+    background: linear-gradient(-135deg, #1de9b6 0%, #1dc4e9 100%);
+    width     : 100%;
+    position  : fixed;
+    z-index   : 100;
+}
+
+nav {
+    float: left;
+    width: 100%;
+}
+
+nav ul {
+    list-style: none;
+    overflow  : hidden;
+}
+
+nav ul li {
+    float      : left;
+    font-family: Arial, sans-serif;
+    font-size  : 16px;
+}
+
+nav ul li a {
+    display        : block;
+    padding        : 20px;
+    color          : #fff;
+    text-decoration: none;
+}
+
+nav ul li:hover {
+    background:  #00CED1;
+}
+
+/* .contenido {
+    padding-top: 80px;
+}
+
+.contenido {
+    padding-top: 80px;
+} */
+
+.imagen{/*User image*/
+    border-color: #6EC1E4;
+    border-style: solid;
+    border-radius: 50%;
+    display        : inline;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.contenedorMenu{
+
+    width: 50%;
+    float: left;
+}
+
+.contenedorPerfil{
+    width: 18%;
+    float: left;
+    margin-left: 30%;
+    border-left: dashed 1px white;
+}
+
+.contenedorPerfil h5{
+    width: 400px;
+    display: inline;
+    margin-top:19px;
+    margin-right: 2px;
+}
+
+.contenedorUsuario{
+    margin-top: 12px;
+    float: right;
+}
+
+.fa-sign-out-alt{
+    font-size: 30px;
+}
+
+h5, .fa-sign-out-alt,.fa-cog{
+    color: white;
+}

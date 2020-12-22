@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es" class="tamañototal">
+
+<head>
+    <link rel="stylesheet" href="../static/Estilos/estilosLogin.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inicio de sesion</title>
+</head>
+
+<body class="tamañototal">
+    <div style="background-color: rgb(32, 228, 241); line-height: 3;" class="tamañototal">
+        <div id="formContent" class="center" class="tamañototal">
+            <!-- Icon -->
+            <div>
+                <i class="fas fa-shopping-basket fa-10x" style="color: rgb(255, 255, 255);margin-top: 100px;"></i>
+
+                <h1 style="font-size: 9; font: 150% sans-serif;">
+                    Sistema de inventarios
+                </h1>
+            </div>
+            <div>
+                <!-- Login Form -->
+                <form action="/home" class="tamañototal" method="POST">
+                    <input type="text" id="login" class="cajatxt" name="usuario" placeholder="Usuario" required>
+                    <br>
+                    <input type="password" id="password" class="cajatxt" name="contraseña" placeholder="Contraseña" required>
+                    <br>
+                    <input type="submit" class="boton_personalizado" value="Iniciar Sesión">
+                    <h2>{{validacion}}</h2>
+                </form>
+                <!-- Remind Passowrd -->
+                <a href="recuperar" class="textofinal">Olvidaste tu Contraseña?</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar</title>
+    <link rel="stylesheet" href="../static/Estilos/estilosBuscar.css">
+    <link rel="stylesheet" href="../static/Estilos/estilosNav.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+</head>
+<body class="barra" >
+
+    <div class="prueba">
+        <header class="barra">
+            <nav class="barra">
+                <div class="barra">
+                    <div class="contenedorMenu barra">
+                        <ul class="barra">
+                            <li><a href="homeUsuario"><i class="fas fa-home"></i></a></li>
+                            <li><a href="buscar">Buscar Producto</a></li>
+                        </ul>
+                    </div>
+                    <div class="contenedorPerfil barra">
+                        <img class="imagen" class="rounded-circle img-fluid" src="../static/Imagenes/user.jpg" width="45em" alt="user picture">
+                        <div class="contenedorUsuario">
+                            <h5>{{persona["usuario"]}}</h5>
+                            <a href="configuracionUsuario"><i class="fas fa-cog"></i></a>
+                            <a href="/logout"><i class="fas fa-sign-out-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        </div>
+
+    <div class="barra1">
+        <form action="/buscar" method="POST" >
+            <input class="busqueda" type="text" name="producto" id="" pattern="[0-9]{3}" placeholder="Ingrese la referencia del producto:" required > 
+            <input class="lupa" type="submit" value="Buscar">
+            <i class="fas fa-search"></i>
+        </form>
+    </div>
+    <div class="cuadro">
+        <div class="info">
+            {% if row %}
+            <img src="../static/Imagenes/{{row['url'] }}" alt="imagen" class="imagen1">
+            <label class="primario" for="">Nombre: {{ row["nombre"] }} </label>
+            <label for="">Cantidad: {{ row["cantidad"] }} </label>
+            {% endif %}
+        </div>
+        <form action="/comprar" method="POST">
+            <input class="cancelar" type="button" name= "cancelar" value="Cancelar" onclick="location.href='/buscar'" >
+            <input class="cantidad" type="number" name="cant" id="" value=1 > Cantidad
+            <input class="confirmar" type="submit" name= "confirmar" value="Confirmar" formaction="/comprar">
+        </form>
+        
+
+    </div>
+    
+</body>
+</html>

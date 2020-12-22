@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="../static/Estilos/estilosNav.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/Estilos/estilosHomeuser.css">
+</head>
+
+<body class="barra">
+    <header class="barra">
+        <nav class="barra">
+            <div class="barra">
+                <div class="contenedorMenu barra">
+                    <ul class="barra">
+                        <li><a href="homeUsuario"><i class="fas fa-home"></i></a></li>
+                        <li><a href="buscar">Buscar Producto</a></li>
+                    </ul>
+                </div>
+                <div class="contenedorPerfil barra" style="float: right;width: 220px;">
+                    <img class="imagen" class="rounded-circle img-fluid" src="../static/Imagenes/user.jpg" width="45em"
+                        alt="user picture">
+                    <div class="contenedorUsuario">
+                        <h5>{{persona["usuario"]}}</h5>
+                        <a href="configuracionUsuario"><i class="fas fa-cog" style="color: white;"></i></a>
+                        <a href="/logout"><i class="fas fa-sign-out-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <br>
+    <br>
+    <br>
+    <!-- aca inician los productos -->
+    <div class="containerdos">
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-image">
+                    <thead style="font-size: 16;">
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Imagen</th>
+                            <th scope="col">Nombre de articulo</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col">Unidades</th>
+
+                        </tr>
+                    </thead>
+                    {% for row in rows %}
+                    <tbody>
+                        <tr>
+                            <th class="centrar" scope="row">{{row["id"]}}</th>
+                            <th class="w-25">
+                                <img src="../static/Imagenes/{{row['url']}}" class="img-fluid img-thumbnail" alt="Sheep"
+                                    style="margin:auto;max-height: 132.5px;">
+                            </th>
+                            <td class="centrar">{{row["nombre"]}}</td>
+                            <td class="centrar">{{row["valor"]}}</td>
+                            <td class="centrar">{{row["cantidad"]}}</td>
+
+                        </tr>
+                    </tbody>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

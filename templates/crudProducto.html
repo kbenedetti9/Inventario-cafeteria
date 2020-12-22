@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/Estilos/estilosProducto.css">
+    <link rel="stylesheet" href="../static/Estilos/estilosNav.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+    <script src="../static/validaciones.js"></script>
+    <script src="../static/crudProducto.js"></script>
+    <title>Productos</title>
+</head>
+
+<body class="barra">
+    <div class="barra contenedorBarra">
+        <header class="barra">
+            <nav class="barra">
+                <div class="barra">
+                    <div class="contenedorMenu barra">
+                        <ul class="barra">
+                            <li><a href="/homeAd"><i class="fas fa-home"></i></a></li>
+                            <li><a href="crudUsuario">Usuarios</a></li>
+                            <li><a href="crudProducto">Productos</a></li>
+                        </ul>
+                    </div>
+                    <div class="contenedorPerfil barra">
+                        <img class="imagen" class="rounded-circle img-fluid" src="../static/Imagenes/user.jpg"
+                            width="45em" alt="user picture">
+                        <div class="contenedorUsuario">
+                            <h5>{{persona["usuario"]}}</h5>
+                            <a href="configuracionAdmin"><i class="fas fa-cog"></i></a>
+                            <a href="/"><i class="fas fa-sign-out-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    </div>
+    <div class="crudProducto">
+        <h1 class="titulo"><i class="fas fa-shopping-basket"></i>Producto</h1>
+        <div class="cuadroCrear card">
+            <div class="contenedorForm">
+                <form action="/producto/crear" method="POST" enctype="multipart/form-data">
+                    <div class="uno">
+                        <div class="contenedorId">
+                            <label>ID:</label>
+                            <input type="text" id="id" class="id" name="id" pattern="[0-9]{3}" required>
+                        </div>
+                        <div class="nombre">
+                            <label>Nombre:</label>
+                            <input type="text" id="nombre" name="nombre" maxlength="9" required onkeypress="return soloLetras(event)">
+                        </div>
+                    </div>
+                    <div class="dos">
+                        <label>Precio: $</label>
+                        <input type="number" id="precio" class="precio" name="precio" required>
+                        <label class="cantidadEtiqueta">Cantidad:</label>
+                        <input type="number" id="cantidad" class="cantidad" name="cantidad" required>
+                    </div>
+                    <div class="tres">
+                        <label>Imagen</label>
+                        <input type='file' name="imagen" id="url" required onchange="mostrarImagen()" />
+                    </div>
+                    <div class="botones">
+                        <button type="submit" value="Guardar" name="guardar" formaction="/producto/crear"><i
+                                class="fas fa-save"></i> Guardar</button>
+                        <button class="cancelar" type="button" value="Cancelar"
+                            onclick="location.href='/crudProducto'">Cancelar</button>
+                        <button class="actualizar" type="submit" value="Actualizar" name="actualizar" id="actualizar"
+                            formaction="/producto/actualizar"><i class="fas fa-pen"></i>Actualizar</button>
+                        <button id="btnEliminar" type="submit" formaction="/producto/eliminar"><i
+                                class="fas fa-trash-alt"></i></button>
+                    </div>
+                </form>
+            </div>
+            <div class="contenedorImg">
+                <div class="contenedorCamera">
+                    <i class="fas fa-camera-retro"></i>
+                </div>
+                <div class="cuadroImg">
+                    <img id="img" src="../static/Imagenes/sinimg.png" style="width:200px;height:200px;">
+                </div>
+            </div>
+        </div>
+        <div class="cuadroConsultar card">
+            <div class="contenedorConsulta">
+                <form action="/producto/consultar" method="POST">
+                    <label>Buscar :</label>
+                    <input type="text" name="buscar">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                    <button type="button" onclick="location.href='/crudProducto'"><i class="fas fa-sync-alt"></i></button>
+                    <i class="fas fa-list"></i>
+                </form>
+            </div>
+            <table class="tablaProductos" onclick="obtenerValores(event)">
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Imagen</th>
+                </tr>
+                {% if row %}
+                <tr>
+                    <td>{{row["id"]}}</td>
+                    <td>{{row["nombre"]}}</td>
+                    <td>{{row["valor"]}}</td>
+                    <td>{{row["cantidad"]}}</td>
+                    <td>{{row["url"]}}</td>
+                </tr>
+                {% else %}
+                {% for row in rows %}
+                <tr>
+                    <td>{{row["id"]}}</td>
+                    <td>{{row["nombre"]}}</td>
+                    <td>{{row["valor"]}}</td>
+                    <td>{{row["cantidad"]}}</td>
+                    <td>{{row["url"]}}</td>
+                </tr>
+                {% endfor %}
+                {% endif %}
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %} Bienvenida {% endblock %}
+
+{% block ref %}
+<link rel="stylesheet" href="../static/Estilos/estiloHome.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+{% endblock %}
+{% block content %}
+    <div class="primer">
+        <h2>
+            <i class="fas fa-home"></i>
+            Home
+        </h2>
+    </div>
+    <div class="card">
+        <label for="">Bienvenido</label>
+        <label for="">{{persona["nombre"]}} - # {{persona["id"]}}</label>
+    </div>
+    <div class="subtitle">
+        <h2>¿Que desea hacer?</h2>
+    </div>
+    <div class="segundo">
+        <input type="button" value=" Manejar productos" onclick="location.href = 'crudProducto' ">
+        <input type="button" value="Manejar empleados" onclick="location.href = 'crudUsuario' ">
+    </div>
+    {% endblock %}

@@ -1,0 +1,42 @@
+h1{
+    text-align: center;
+}
+
+div{
+    text-align: center;
+}
+
+.id{
+    background-color: #00CED1;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    padding: 20px;
+    width:170px;
+    display: inline;
+    border-radius: 30px;
+    color: white;
+    font-weight: bolder;
+}
+
+.email{
+    background-color: #00CED1;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    padding: 20px 30px 20px 30px;
+    width:170px;
+    display: inline;
+    border-radius: 30px;
+    color: white;
+    font-weight: bolder;
+}
+
+.correo{
+    background-color: #00CED1;
+    height: 30px;
+    border: none;
+    border-radius: 2px;
+    margin-left: 180px;    
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+body{
+    background-color: white;
+}

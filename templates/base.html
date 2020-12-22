@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="../static/Estilos/estilosNav.css">
+    {% block ref %}
+    {% endblock %}
+</head>
+
+<body class="barra">
+    <div class="prueba">
+        <header class="barra">
+            <nav class="barra">
+                <div class="barra">
+                    <div class="contenedorMenu barra">
+                        <ul class="barra">
+                            <li><a href="/homeAd"><i class="fas fa-home"></i></a></li>
+                            <li><a href="crudUsuario">Usuarios</a></li>
+                            <li><a href="crudProducto">Productos</a></li>
+                        </ul>
+                    </div>
+                    <div class="contenedorPerfil barra">
+                        <img class="imagen" class="rounded-circle img-fluid" src="../static/Imagenes/user.jpg"
+                            width="45em" alt="user picture">
+                        <div class="contenedorUsuario">
+                            <h5>{{persona["usuario"]}}</h5>
+                            <a href="configuracionAdmin"><i class="fas fa-cog"></i></a>
+                            <a href="/logout"><i class="fas fa-sign-out-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    </div>
+
+    {% block content %}
+    {% endblock %}
+</body>
+
+</html>
