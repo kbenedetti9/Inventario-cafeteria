@@ -112,7 +112,7 @@ def crudUsuario():
             rows = cur.fetchall()
         persona["usuario"] = session["user"]
         # Aqui
-        return render_template("crudUsuario.html", rows=rows, persona=persona)
+        return render_template("crudUsuario2.html", rows=rows, persona=persona)
     else:
         return render_template("login.html")
 

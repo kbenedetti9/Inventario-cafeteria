@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+
+{% block title %} Usuarios {% endblock %}
+
+{% block ref %}
+<link rel="stylesheet" href="../static/Estilos/estiloCrudUsuario2.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+<script src="../static/validaciones.js"></script>
+<script src="../static/crudUsuario.js"></script>
+{% endblock %}
+{% block content %}
+<div class="Barra_principal">
+    <i class="fas fa-home" style="color: white; margin-left: 1%;size: 110%;"></i>
+    <a Class="link_usuario" href=#>Usuarios</a>
+    <a Class="link_producto" href=#>Productos</a>
+</div>
+<div>
+    <h1 class="titulo"><i class="fas fa-users"></i>Usuarios</h1>
+    <div class="card cuadroCrear">
+        <div class="contenedorForm">
+            <form class="ingreso_usuario" name="ingreso_usuario" id="ingreso_usuario" action="/usuario/crear"
+                method="POST">
+                <div class="Derecha">
+                    <div class="contenido">
+                        <div class="contenedorId">
+                            <label for="ID_usuario">ID: </label>
+                            <input class="ingreso_ID" style="width: 60px;" type="number" name="ID_usuario"
+                                id="ID_usuario" required>
+                        </div>
+                        <div class="usuario">
+                            <label for="Usuario">Usuario: </label>
+                            <input class="ingreso_usuario_texto3" type="text" name="Usuario" id="Usuario" required>
+                        </div>
+                        <br>
+                        <br>
+                        <label for="nombre_usuario">Nombre: </label>
+                        <input class="ingreso_usuario_texto1" type="text" name="nombre_usuario" id="nombre_usuario"
+                            required onkeypress="return soloLetras(event)">
+                        <br>
+                        <br>
+                        <label for="correo_electronico">Correo electrónico: </Label>
+                        <input class="ingreso_usuario_texto2" type="email" name="correo_electronico"
+                            id="correo_electronico" required>
+                        <br>
+                        <br>
+                        <button class="guardar_usuario_ingresado1" type="submit" formaction="/usuario/crear"
+                            value="Crear" Name="crear"><i class="fas fa-user-plus"></i>Crear</button>
+                        <button class="guardar_usuario_ingresado1 actualizar" type="submit"
+                            formaction="/usuario/actualizar" value="Editar" Name="editar"><i
+                                class="fas fa-pen"></i>Actualizar</button>
+                        <button class="guardar_usuario_ingresado1" id="btnEliminar" type="submit"
+                            formaction="/usuario/eliminar"><i class="fas fa-trash-alt"></i></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="contenedorImg">
+            <i class="far fa-address-card"></i>
+            <div class="contenedorCamera">
+                <i class="fas fa-bookmark"></i>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="cuadroConsultar card">
+        <div class="contenedorConsulta">
+            <form class="busqueda_usuario" name="busqueda_usuario" id="busqueda_usuario" action="/usuario/consultar"
+                method="POST">
+                <div>
+                    <label class="ID_busqueda" for="ID_busqueda">Buscar: </label>
+                    <input class="id_texto_busqueda" type="search" name="ID_busqueda" id="ID_busqueda">
+                    <button class="buscar" type="submit"><i class="fas fa-search"></i></button>
+                    <i class="fas fa-list"></i>
+                </div>
+            </form>
+        </div>
+        <br>
+        <table class="tabla_busqueda" onclick="obtenerValoresusuario(event)">
+            <tr>
+                <th> ID </th>
+                <th>Nombre</th>
+                <th>Correo electrónico</th>
+                <th>Usuario</th>
+            </tr>
+            {% if row %}
+            <tr>
+                <td>{{row["id"]}}</td>
+                <td>{{row["nombre"]}}</td>
+                <td>{{row["correo"]}}</td>
+                <td>{{row["usuario"]}}</td>
+            </tr>
+            {% else %}
+            {% for row in rows %}
+            <tr>
+                <td>{{row["id"]}}</td>
+                <td>{{row["nombre"]}}</td>
+                <td>{{row["correo"]}}</td>
+                <td>{{row["usuario"]}}</td>
+            </tr>
+            {% endfor %}
+            {% endif %}
+        </table>
+
+    </div>
+</div>
+{% endblock %}
